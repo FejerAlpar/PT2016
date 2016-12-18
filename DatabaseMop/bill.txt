@@ -1,0 +1,4 @@
+Order ID: 3
+Client Name: I. C. Wiener Client phone number: 0725145147
+Product name: ACER Aspire 5742G Unit price: 500 Count: 3
+Total: 1500
