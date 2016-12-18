@@ -8,11 +8,9 @@ public class DB {
     private static DB instance = new DB();
     protected static Statement st;
     protected static Connection connection;
-    public static final String URL = "jdbc:mysql://localhost:3306/ecommerce";
-    public static final String USER = "root";
-    public static final String PASSWORD = "";
-    public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver"; 
-     
+    public static final String URL = "jdbc:sqlserver://JD-PC:1433;integratedSecurity=true;";
+    public static final String DRIVER_CLASS = "com.microsoft.sqlserver.jdbc.SQLServerDriver"; 
+
     //private constructor
     public DB() {
         try {
@@ -25,10 +23,10 @@ public class DB {
     private Connection createConnection() {
        
         try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            connection = DriverManager.getConnection(URL, "sa", "secret");
             st = connection.createStatement();
         } catch (SQLException e) {
-            System.out.println("ERROR: Unable to Connect to Database.");
+            System.out.println("Error connecting to database");
         }
         return connection;
     }   
